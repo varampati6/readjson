@@ -5,7 +5,12 @@
           "name": "Azure",
           "solution": "PackingStation\\BLogic.Applications.PackingStation.sln",
           "analysisFiles": "BLogic.Applications.PackingStation.exe"
+        },
+        {
+          "name": "Azure",
+          "solution": "PackingStation\\BLogic.Applications.PackingStation.sln",
+          "analysisFiles": "BLogic.Applications.PackingStation.exe"
         }
-      }
+    ]
     }
   }
