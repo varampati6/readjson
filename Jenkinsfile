@@ -1,18 +1,15 @@
 pipeline {
 	agent {
-		label 'master'
+		label '4336'
 }
-   
    parameters {
-            choice(name: 'Azure_Parameters', choices:"Azure", description: "Do you whish to do Azure grab parameters?" )
-			choice(name: 'Azure_Parameters', choices:"erl", description: "Do you whish to do erl grab parameters?" )
-            
-    }
+        choice(name: 'Azure_Parameters', choices:"Azure\nERL", description: "Do you whish to do grab parameters?" )
+        }
 
  stages {
     stage('Git Clone') {
         steps {
-        git branch: 'master', changelog: true, credentialsId: 'sanu-bitbucket-credentials', url: 'https://ustr-bitbucket-1.na.uis.unisys.com:8443/scm/~satyadas/read_json_file.git'
+        git branch: 'master', changelog: true, url: 'https://ustr-bitbucket-1.na.uis.unisys.com:8443/scm/~satyadas/read_json_file.git'
         sh "ls"
     }
         
