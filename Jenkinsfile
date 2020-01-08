@@ -1,4 +1,3 @@
-import groovy.json.JsonSlurperClassic
 pipeline {
 	agent {
 		label '4336'
