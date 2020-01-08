@@ -1,11 +1,12 @@
+import groovy.json.JsonSlurperClassic
 pipeline {
 	agent {
 		label '4336'
 }
-	environment {
-		def projects = readJSON file: "${env.WORKSPACE}/azure.json")
-		def projects = readJSON file: "${env.WORKSPACE}/erl.json")
-	}
+//	environment {
+//		def projects = readJSON file: "${env.WORKSPACE}/azure.json")
+//		def projects = readJSON file: "${env.WORKSPACE}/erl.json")
+//	}
 
    parameters {
         choice(name: 'Azure_Parameters', choices:"Azure\nERL", description: "Do you whish to do grab parameters?" )
