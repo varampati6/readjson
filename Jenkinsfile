@@ -20,7 +20,7 @@ pipeline {
 //	if ("${params.Azure_Parameters}" == "Azure")
 	   steps {
             script {
-                def projects = readJSON file: '/jenkins/4336/workspace/SINGULARITY_TEAM/Testing/readfiles/azure.json'
+                def projects = readJSON file: '/jenkins/4336/workspace/SINGULARITY_TEAM/Testing/readfiles/azure.json' 
 	//	    def projects = readFile file: "${env.WORKSPACE}/azure.json"
            //     if ("${params.Azure_Parameters}" == "Azure") {
                     echo "current workspace is ${env.WORKSPACE}"
