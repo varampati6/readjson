@@ -1,7 +1,7 @@
 pipeline {
   agent { label '4336' }
   environment {
-  def projects = readJSON file: "${env.WORKSPACE}/azure.json"
+  def projects = readFile file: "${env.WORKSPACE}/azure.json"
   }
   parameters {
 	choice(name: 'Environment', choices: 'Azure\nERL', description: 'What Config Environment Files should be used?')
