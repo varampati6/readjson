@@ -15,12 +15,7 @@ pipeline {
      }
   
    stage('Project Name') {
-	     when {
-    expression {
-    //    return env.BRANCH_NAME != 'master';
-	     "${params.Azure_Parameters}" == "Azure"
-        }
-    }
+	   when { expression { ${params.Azure_Parameters} == "Azure" }  }
 //	if ("${params.Azure_Parameters}" == "Azure")
 	   steps {
             script {
