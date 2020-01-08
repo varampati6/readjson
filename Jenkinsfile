@@ -15,7 +15,7 @@ pipeline {
      }
   
    stage('Project Name') {
-	   when { expression { ${params.Azure_Parameters} == "Azure" }  }
+	   when { expression { "${params.Environment}" == "Azure" }  }
 //	if ("${params.Azure_Parameters}" == "Azure")
 	   steps {
             script {
