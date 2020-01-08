@@ -33,7 +33,8 @@ pipeline {
 	   steps {
             script {
               //  def projects = readJSON file: "${env.WORKSPACE}/erl.json"
-                if ("${params.Azure_Parameters}" == "erl") {
+		def projects = readFile(file: "${env.WORKSPACE}/erl.json")
+                if ("${params.Azure_Parameters}" == "ERL") {
                     echo "current workspace is ${env.WORKSPACE}"
                     echo "Project name is ${projects.projects.project[1].name}"
                     
