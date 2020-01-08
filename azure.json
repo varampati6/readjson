@@ -1,5 +1,6 @@
-{
+  "projects": {    
     "fruit": "Apple",
     "size": "Large",
     "color": "Red"
-}
+  }
+
