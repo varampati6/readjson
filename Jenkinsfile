@@ -9,14 +9,13 @@ pipeline {
  stages {
     stage('Git Clone') {
         steps {
-        git branch: 'master', changelog: true, url: 'https://ustr-bitbucket-1.na.uis.unisys.com:8443/scm/~satyadas/read_json_file.git'
+        git branch: 'master', changelog: true, url: 'https://github.com/varampati6/readjson.git'
         sh "ls"
     }
         
     }
 
-    stage('Project Name') {
-	    
+    stage('Azure') {
 	   steps {
             script {
                 def projects = readJSON file: "${env.WORKSPACE}/azure.json"
@@ -28,8 +27,7 @@ pipeline {
                 }
             } 
 		}
-		
-	    stage('Project Name') {
+    stage('ERL') {
 	    
 	   steps {
             script {
