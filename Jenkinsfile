@@ -15,16 +15,21 @@ pipeline {
      }
   
    stage('Project Name') {
-	    
+	//     when {
+    //expression {
+    //    return env.BRANCH_NAME != 'master';
+    //    }
+    //}
+	if ("${params.Azure_Parameters}" == "Azure")
 	   steps {
             script {
           //      def projects = readJSON file: "${env.WORKSPACE}/azure.json"
-                if ("${params.Azure_Parameters}" == "Azure") {
+           //     if ("${params.Azure_Parameters}" == "Azure") {
                     echo "current workspace is ${env.WORKSPACE}"
                     echo "Project name is ${projects.projects.project[1].name}"
                     
                     }
-                }
+             //   }
             } 
 	}
   }
