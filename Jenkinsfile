@@ -15,12 +15,13 @@ pipeline {
      }
   
    stage('Project Name') {
-	//     when {
-    //expression {
+	     when {
+    expression {
     //    return env.BRANCH_NAME != 'master';
-    //    }
-    //}
-	if ("${params.Azure_Parameters}" == "Azure")
+	    return "${params.Azure_Parameters}" == "Azure";
+        }
+    }
+//	if ("${params.Azure_Parameters}" == "Azure")
 	   steps {
             script {
           //      def projects = readJSON file: "${env.WORKSPACE}/azure.json"
