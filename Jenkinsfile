@@ -1,9 +1,9 @@
 pipeline {
   agent { label '4336' }
-  environment {
+//  environment {
  // def projects = readFile file: "${env.WORKSPACE}/azure.json"
 //  def projects = readJSON file: '/jenkins/4336/workspace/SINGULARITY_TEAM/Testing/readfiles/azure.json'
-  }
+//  }
   parameters {
 	choice(name: 'Environment', choices: 'Azure\nERL', description: 'What Config Environment Files should be used?')
 	}
