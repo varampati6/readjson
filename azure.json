@@ -5,6 +5,11 @@
           "name": "ERL",
           "solution": "PackingStation\\BLogic.Applications.PackingStation.sln",
           "analysisFiles": "BLogic.Applications.PackingStation.exe"
+        },
+          {
+          "name": "ERL1",
+          "solution": "PackingStation\\BLogic.Applications.PackingStation.sln",
+          "analysisFiles": "BLogic.Applications.PackingStation.exe"
         }
       ]
     }
