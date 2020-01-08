@@ -2,6 +2,7 @@ pipeline {
   agent { label '4336' }
   environment {
   def projects = readFile file: "${env.WORKSPACE}/azure.json"
+  def projects = readJSON file: "${env.WORKSPACE}/azure.json"
   }
   parameters {
 	choice(name: 'Environment', choices: 'Azure\nERL', description: 'What Config Environment Files should be used?')
@@ -19,11 +20,11 @@ pipeline {
 //	if ("${params.Azure_Parameters}" == "Azure")
 	   steps {
             script {
-          //      def projects = readJSON file: "${env.WORKSPACE}/azure.json"
-		    def projects = readFile file: "${env.WORKSPACE}/azure.json"
+                def projects = readJSON file: "${env.WORKSPACE}/azure.json"
+	//	    def projects = readFile file: "${env.WORKSPACE}/azure.json"
            //     if ("${params.Azure_Parameters}" == "Azure") {
                     echo "current workspace is ${env.WORKSPACE}"
-                    echo "Project name is ${projects.project[1].name}"
+                    echo "Project name is ${projects.projects.project[1].name}"
                     
                     }
              //   }
