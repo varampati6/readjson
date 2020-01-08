@@ -2,6 +2,11 @@ pipeline {
 	agent {
 		label '4336'
 }
+	environment {
+		def projects = readJSON file: "${env.WORKSPACE}/azure.json")
+		def projects = readJSON file: "${env.WORKSPACE}/erl.json")
+	}
+
    parameters {
         choice(name: 'Azure_Parameters', choices:"Azure\nERL", description: "Do you whish to do grab parameters?" )
         }
@@ -23,26 +28,11 @@ pipeline {
                 if ("${params.Azure_Parameters}" == "Azure") {
                     echo "current workspace is ${env.WORKSPACE}"
                    // echo "Project name is ${projects.projects.project[1].name}"
-		     echo "Project name is ${projects.project.name}"
+		     echo "Project name is ${projects.project[1].name}"
                     
                     }
                 }
             } 
-		}
-    stage('ERL') {
-	    
-	   steps {
-            script {
-              //  def projects = readJSON file: "${env.WORKSPACE}/erl.json"
-		def projects = readJSON file: "${env.WORKSPACE}/erl.json")
-                if ("${params.Azure_Parameters}" == "ERL") {
-                    echo "current workspace is ${env.WORKSPACE}"
-                  //  echo "Project name is ${projects.projects.project[1].name}"
-                    
-                    }
-                }
-            } 
-		}
 	}
-
+    }
 }
