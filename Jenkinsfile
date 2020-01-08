@@ -26,7 +26,7 @@ pipeline {
            //     if ("${params.Azure_Parameters}" == "Azure") {
                     echo "current workspace is ${env.WORKSPACE}"
                   //  echo "Project name is ${projects.projects.project[1].name}"
-                    echo "$projects"
+		    echo "Project Name is $projects"
                     }
              //   }
             } 
