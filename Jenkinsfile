@@ -18,7 +18,7 @@ pipeline {
 	     when {
     expression {
     //    return env.BRANCH_NAME != 'master';
-	    return "${params.Azure_Parameters}" == "Azure";
+	     "${params.Azure_Parameters}" == "Azure"
         }
     }
 //	if ("${params.Azure_Parameters}" == "Azure")
