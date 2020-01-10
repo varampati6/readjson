@@ -30,9 +30,11 @@ pipeline {
 		 //   echo "Project name is ${projects.projects.project[1].name}"
 		    
 		     echo "Readingg ${params['Environment']}.json"
-		  try {
-		    deployConfig = readJSON file: "${params['Environment']}.json"
-		  }
+		  try {deployConfig = readJSON file: "${params['Environment']}.json" }
+		    catch (Exception e) {
+            // sendErrorMessageToHipchat("Cannot read deploy_${params['CAMUNDA_ENV']}.json property: deployment<br>Error:<br>${e}")
+            error("Cannot read ${params['Environment']}.json property: deployment\nError:\n${e}")
+          }
                     }
              //   }
             } 
