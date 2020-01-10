@@ -20,8 +20,7 @@ pipeline {
 //	if ("${params.Azure_Parameters}" == "Azure")
 	   steps {
             script {
-		   def deployConfig = null
-                def projects = readFile(file: '/jenkins/4336/workspace/SINGULARITY_TEAM/Testing/readfiles/azure.json') 
+		def projects = readFile(file: '/jenkins/4336/workspace/SINGULARITY_TEAM/Testing/readfiles/azure.json') 
 		//def projects = readFile(file: "${env.WORKSPACE}/azure.json"  ) 
 	//	    def projects = readFile file: "${env.WORKSPACE}/azure.json"
            //     if ("${params.Azure_Parameters}" == "Azure") {
@@ -29,12 +28,7 @@ pipeline {
                   //  echo "Project name is ${projects.projects.project[1].name}"
 		 //   echo "Project name is ${projects.projects.project[1].name}"
 		    
-		     echo "Readingg ${params['Environment']}.json"
-		  try {deployConfig = readJSON file: "${params['Environment']}.json" }
-		    catch (Exception e) {
-            // sendErrorMessageToHipchat("Cannot read deploy_${params['CAMUNDA_ENV']}.json property: deployment<br>Error:<br>${e}")
-            error("Cannot read ${params['Environment']}.json property: deployment\nError:\n${e}")
-          }
+		     
                     }
              //   }
             } 
