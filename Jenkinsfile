@@ -25,6 +25,7 @@ pipeline {
 	//	    def projects = readFile file: "${env.WORKSPACE}/azure.json"
            //     if ("${params.Azure_Parameters}" == "Azure") {
                     echo "current workspace is ${env.WORKSPACE}"
+		    sh "cat ${env.WORKSPACE}/azure.json"
                   //  echo "Project name is ${projects.projects.project[1].name}"
 		 //   echo "Project name is ${projects.projects.project[1].name}"
 		    
